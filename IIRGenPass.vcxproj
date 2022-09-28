@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IIRGenPass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CoefficientCalculation.cpp" />
+    <ClCompile Include="IIRGenHighpass.cpp" />
+    <ClCompile Include="IIRGenLowpass.cpp" />
+    <ClCompile Include="IIRGenPass_Butter.cpp" />
+    <ClCompile Include="IIRGenPass_Cheby1.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,17 +149,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\IIRGenHighpass\IIRGenPass.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\IIRGenHighpass\CoefficientCalculation.cpp" />
-    <ClCompile Include="..\IIRGenHighpass\IIRGenHighpass.cpp" />
-    <ClCompile Include="..\IIRGenHighpass\IIRGenLowpass.cpp" />
-    <ClCompile Include="..\IIRGenHighpass\IIRGenPass_Butter.cpp" />
-    <ClCompile Include="..\IIRGenHighpass\IIRGenPass_Cheby1.cpp" />
-    <ClCompile Include="..\IIRGenHighpass\main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

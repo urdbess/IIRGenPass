@@ -15,27 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\IIRGenHighpass\IIRGenPass.h">
+    <ClInclude Include="IIRGenPass.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\IIRGenHighpass\CoefficientCalculation.cpp">
+    <ClCompile Include="CoefficientCalculation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\IIRGenHighpass\IIRGenHighpass.cpp">
+    <ClCompile Include="IIRGenHighpass.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\IIRGenHighpass\IIRGenLowpass.cpp">
+    <ClCompile Include="IIRGenLowpass.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\IIRGenHighpass\IIRGenPass_Butter.cpp">
+    <ClCompile Include="IIRGenPass_Butter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\IIRGenHighpass\IIRGenPass_Cheby1.cpp">
+    <ClCompile Include="IIRGenPass_Cheby1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\IIRGenHighpass\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
