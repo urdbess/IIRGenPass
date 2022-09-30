@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Complex.h" />
     <ClInclude Include="IIRGenPass.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CoefficientCalculation.cpp" />
+    <ClCompile Include="Complex.cpp" />
+    <ClCompile Include="GetNormalH.cpp" />
     <ClCompile Include="IIRGenHighpass.cpp" />
     <ClCompile Include="IIRGenLowpass.cpp" />
     <ClCompile Include="IIRGenPass_Butter.cpp" />

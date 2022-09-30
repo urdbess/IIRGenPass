@@ -3,13 +3,16 @@
 #include "IIRGenPass.h"
 using namespace std;
 
-
-//Chebyshev1滤波器系数生成
 //pTaps[] = {b_0, ..., b_order, a_0, ..., a_order}
 Status IIRGenPass_Cheby1(double rFreq, double ripple, int order, double* pTaps, PassType passType) {
 
+    //计算截止频率omega_c
     double omega_c = omegaCalculation(rFreq, passType);
-    double epsilon = sqrt(pow(10, 0.1 * ripple) - 1);//求波纹对应的epsilon
+    //计算波纹对应的epsilon
+    double epsilon = sqrt(pow(10, 0.1 * ripple) - 1);
+    //计算Chebyshev1滤波器归一化函数系数
+    double* a = cheby1GetNormalH(ripple, order);
+
     int length = order + 1; //a、b的系数组长度
 
     double* denominator = new double[length]; //存放分母系数
@@ -23,6 +26,7 @@ Status IIRGenPass_Cheby1(double rFreq, double ripple, int order, double* pTaps, 
     int* tempCoef1 = new int[length];
     int* tempCoef2 = new int[length];
 
+    //计算分子、分母的系数
     for (int i = 0; i <= order; i++) {
         for (int j = 0; j <= order; j++) {
             tempCoef1[j] = 0;     //tempCoef1和tempCoef2进行初始化
@@ -52,17 +56,10 @@ Status IIRGenPass_Cheby1(double rFreq, double ripple, int order, double* pTaps, 
             }
         }
 
-        ////打印第i轮多项式相乘的结果
-        //printf("第%d轮多项式相乘结果：", i);
-        //for (int k = 0; k < length; k++) {
-        //    cout << tempCoef1[k] << ", " ;
-        //}
-        //cout << endl;
-
         //计算分母系数
         for (int j = 0; j <= order; j++) {
             //将(1 + z^(-1))^i * (1 - z^(-1))^otherN的各系数依次加上
-            denominator[j] += pow(omega_c, order - i) * (double)tempCoef1[order - j] * cheby1Table[order - 1][i];
+            denominator[j] += pow(omega_c, order - i) * (double)tempCoef1[order - j] * a[i];
         }
     }
     ////打印分母
